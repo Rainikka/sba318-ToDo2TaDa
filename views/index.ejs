@@ -3,7 +3,7 @@
 
 <head>
   <title>ToDo2TaDa</title>
-  <link rel="stylesheet" href="./public/style.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -16,7 +16,7 @@
       <h1>TO-DO <span>&rArr;</span> TA-DA!</h1>
       <form action="/tasks" method="POST">
         <input id="task2Do" type=" text" name="task" placeholder="Add A New To-Dok">
-        <button>ADD TO-DO</button>
+        <button id="btn2Do">ADD TO-DO</button>
       </form>
 
       <ul>
@@ -24,7 +24,9 @@
           <li>
             <%= task.task %>
               <form action="/tasks/<%= task.id %>?_method=DELETE" method="POST">
-                <button type="submit">TA-DA!</button>
+                <button type="submit">TA-DA!<br>
+                  <span id="pre">Done</span#>
+                </button>
               </form>
           </li>
           <% }); %>

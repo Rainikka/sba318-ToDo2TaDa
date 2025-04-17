@@ -59,8 +59,6 @@
  * Media Outlet :: YouTube.com
  * Title :: Learn Express JSs 
  * Creator/Autor :: WebDevSimplified
- * 
- *****************************************
  *
 /******** Knowledge Inspiration 3 ********
  * 
@@ -68,13 +66,19 @@
  * Title :: Learning Restful APIs 
  * Creator/Autor :: Morten Rand-Hendriksen
  * 
+/******** Knowledge Inspiration 4 ********
+ * 
+ * Media Outlet :: Medium.com
+  * Title :: Hosting a JSON API on GitHub Pages
+  * Creator / Autor :: Vistor Scholz
+  * 
  *****************************************/
+
 
 /*** Set-Up: Basic Server ***/
 const express = require('express');
 const app = express();
 const PORT = 3000;
-
 
 /*** Set-Up: Middleware ***/
 app.use(express.json()); /* putting json capabilities into play */
