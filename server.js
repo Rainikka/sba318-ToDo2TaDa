@@ -16,7 +16,7 @@
 /****** GIT & NODE INITIALIZATIONS *******
  * git init  ~~ git add . ~~  git commit -m "note" ~~ git push
  * npm init -y
- * npm i express body-parser method-override ejs
+ * npm i express urlencode cors body-parser method-override ejs
  * npm i --save-dev nodemon
  
  * In package.json file, 
@@ -50,30 +50,26 @@
 
 /******** Knowledge Inspiration 1 ********
  * 
- * Media Outlet :: Medium.com
- * Title :: Creating a RESTful API with Node.js & Express.js 
- * Creator/Autor :: techiydude
- * 
-/******** Knowledge Inspiration 2 ********
- * 
- * Media Outlet :: YouTube.com
- * Title :: Learn Express JSs 
- * Creator/Autor :: WebDevSimplified
- *
-/******** Knowledge Inspiration 3 ********
- * 
- * Media Outlet :: LinkedInLearning
- * Title :: Learning Restful APIs 
- * Creator/Autor :: Morten Rand-Hendriksen
- * 
-/******** Knowledge Inspiration 4 ********
- * 
- * Media Outlet :: Medium.com
-  * Title :: Hosting a JSON API on GitHub Pages
-  * Creator / Autor :: Vistor Scholz
-  * 
- *****************************************/
-
+ * Media Outlet:: Medium.com
+ * Title :: Creating a RESTful API with Node.js & Express.js
+ * Creator / Autor :: techiydude
+ ********* Knowledge Inspiration 2 ********
+* Media Outlet:: YouTube.com
+* Title :: Learn Express JSs
+* Creator / Autor :: WebDevSimplified
+*
+******** Knowledge Inspiration 3 ********
+* Media Outlet:: LinkedInLearning
+* Title :: Learning Restful APIs
+* Creator / Autor :: Morten Rand - Hendriksen
+* 
+******** Knowledge Inspiration 4 ********
+* 
+* Media Outlet:: Medium.com
+* Title :: Hosting a JSON API on GitHub Pages
+* Creator / Autor :: Vistor Scholz
+* 
+*****************************************/
 
 /*** Set-Up: Basic Server ***/
 const express = require('express');
@@ -87,6 +83,8 @@ app.set('view engine', 'ejs'); /* ejs template engine */
 app.use(express.urlencoded({ extended: true })); /* access encoded form input data */
 const methodOverride = require('method-override');
 app.use(methodOverride('_method')); /* allows forms to respond to PUT & DELETE requests */
+const cors = require("cors");
+app.use(cors()); /* cross-origin resource sharing: web app in one domain can  access resources from a different domain */
 
 /*** Set-Up: Route to Render Landing Page ***/
 app.get('/', (req, res) => {
