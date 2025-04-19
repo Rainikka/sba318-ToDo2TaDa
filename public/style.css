@@ -15,7 +15,7 @@ body {
   width: 600px;
   padding: 20px;
   background: #f0f0f0;
-  border: 1px solid #ccc;
+  border: 7px double darkcyan;
   border-radius: 5px;
 }
 
