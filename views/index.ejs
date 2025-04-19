@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>ToDo2TaDa</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <main id="bodyBox">
+
+    <fieldset id="fieldset">
+      <legend id="legend"> Daily &
+        Consistent
+      </legend>
+      <h1>TO DO <span id="arrow">&rArr;</span> TA DA!</h1>
+      <form action="/tasks" method="POST">
+        <input id="task2Do" type=" text" name="task" placeholder="Add To-Do">
+        <button id="btn2Do">ADD TO-DO</button>
+      </form>
+
+      <ul>
+        <% tasks.forEach(task=> { %>
+          <li>
+            <%= task.task %>
+              <form action="/tasks/<%= task.id %>?_method=DELETE" method="POST">
+                <button type="submit">TA DA!<br>
+                  <span id="pre">Done</span#>
+                </button>
+              </form>
+          </li>
+          <% }); %>
+      </ul>
+    </fieldset>
+  </main>
+</body>
+
+</html>
