@@ -16,23 +16,28 @@
 /****** GIT & NODE INITIALIZATIONS *******
  * git init  ~~ git add . ~~  git commit -m "note" ~~ git push
  * npm init -y
- * npm i express body-parser method-override ejs
+ * npm i express body-parser method-override ejs dotenv
  * npm i --save-dev nodemon
  
  * In package.json file, 
  * replace this key/value pair:
     * "scripts":  
-       -"test": "echo\"Error: no test specified\" && exit 1" 
+       -"test": "echo\"Error: no test specified\" && exit 1"
   
   * with this key/value pair ******
     * "scripts": {
         - "start": "node server.js",
         - "devStart": "nodemon server.js"
    * },
-   
-**** nodemon devStart ~~ when ready to run server: automatically restarts server anytime there are changes to code. ******
- 
-/****** REQUIRED FOLDERS *******
+
+/****** STARTING UP THE SERVER ENGINE *******   
+ *  
+ * node start ~~- One server run 
+ * nodemon devStart ~~ automatically restarts server with everye change in code 
+ * 
+/*******************************************************/
+
+/****** REQUIRED STRUCTURE *******
  * 1. Create Root Folder
  * 2. Create server.js file  (check package.json to make sure thst the value of main: is server.js)
  * 3. Create 'views' folder to store html templates: Pug or EJS
@@ -43,8 +48,7 @@
  * 8. For javascript integration of code in HTML, EJS is the dynamo
  * 9. Place style.css file and other static files in pubblic folder
  * 10. Create .http file to test routes (employing  shortcut: Command + Option + R )
-
-
+ * 
 /************ END OF PRE-CODE SET-UP REQUIREMENTS *************/
 /*************************************************************/
 
@@ -83,6 +87,7 @@ const PORT = 3000;
 /*** Set-Up: Middleware ***/
 app.use(express.json()); /* putting json capabilities into play */
 app.use(express.static('public')); /* static files from page folder */
+app.set('views', 'views'); /*set view engine path */
 app.set('view engine', 'ejs'); /* ejs template engine */
 app.use(express.urlencoded({ extended: true })); /* access encoded form input data */
 const methodOverride = require('method-override');
@@ -95,14 +100,13 @@ app.get('/', (req, res) => {
 
 /*** Set-Up: Array of Dummy To-Do Task List ***/
 let tasks = [
-  { id: 0, task: 'Test Delete Case' },
-  { id: 1, task: 'Learn Mongo.db' },
+  { id: 1, task: 'Learn Node.js' },
   { id: 2, task: 'Learn Express.js' },
-  { id: 3, task: 'Learn React.js' },
-  { id: 4, task: 'Learn Node.js' },
-  { id: 5, task: 'Build REST API' },
+  { id: 3, task: 'Build API Restfully' },
+  { id: 4, task: 'Learn Mongo.db' },
+  { id: 5, task: 'Learn React.js' },
   { id: 6, task: 'Build CRUD Capstone' },
-  { id: 7, task: 'Get Good Sleep Again' }
+  { id: 7, task: 'Get Better Sleep' }
 ];
 
 /***** API Endpoints for Each Request Type ******/

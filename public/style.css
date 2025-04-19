@@ -2,149 +2,88 @@
   box-sizing: border-box;
 }
 
-main {
-  margin: 0 auto;
-  min-width: auto;
-  height: auto;
-  padding: 0;
-  display: flex;
-  flex-flow: column;
-  text-align: center;
+body {
+  margin: 20px auto;
+  width: 600px;
+  padding: 20px;
   font-family: Arial, sans-serif;
-  font-size: 16px;
+  text-align: center;
 }
 
 #fieldset {
-  margin: 0 auto;
+  margin: 20px auto;
   width: 600px;
-  height: auto;
   padding: 20px;
-  display: flex;
-  flex-flow: column;
-  align-items: center;
-  justify-content: center;
-  border: 5px double teal;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
-    0 6px 20px 0 rgba(0, 0, 0, 0.10);
+  background: #f0f0f0;
+  border: 7px double darkcyan;
+  border-radius: 5px;
 }
 
 legend {
-  font-family: Georgia, 'Times New Roman', Times, serif;
-  font-size: 20px;
+  font-size: 24px;
+  font-family: 'Times New Roman', Times, serif;
   font-style: italic;
-  color: darkcyan
+  color: darkcyan;
 }
 
 h1 {
-  font-family: Roboto, 'Open Sans', 'Helvetica Neue', sans-serif;
   font-size: 48px;
-  word-spacing: 2px;
-  color: gray;
-  text-shadow: 0 1px 0 rgba(0, 0, 128, 0.4);
+  color: #333;
 }
 
-span {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-size: 66px;
-  font-style: none;
-  font-weight: normal;
-  color: darkcyan
-}
-
-form {
-  margin: 0 auto;
+#arrow {
+  font-size: 52px;
+  color: darkcyan;
 }
 
 ul {
   width: 100%;
+  padding: 0;
   list-style: none;
-}
-
-li form {
-  display: flex;
-  gap: 5px;
-}
-
-li,
-input {
-  width: 100%;
-}
-
-li,
-input {
-  margin: 8px 0;
-  background: #f4f4f4;
-  padding: 10px;
-  display: flex;
-  justify-content: space-betweend;
-  align-items: end;
-  border: 1px solid seagreen;
+  margin: 20px auto;
 }
 
 li {
+  padding: 10px;
   margin: 5px 0;
-  padding: 10px 15px;
+  background: white;
+  border: 1px solid #ddd;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #f4f4f4;
-  border-radius: 2px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
-    0 6px 20px 0 rgba(0, 0, 0, 0.10);
+  text-align: left;
+  min-height: 50px;
 }
 
-li form {
-  margin: 0;
+input {
+  width: 100%;
+  height: 55px;
+  padding: 8px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  display: block;
+  text-align: center;
+  font-size: 16px;
 }
 
 button {
-  padding: 6px 10px;
+  padding: 8px 16px;
+  background: darkcyan;
+  color: #fff;
   border: none;
   border-radius: 4px;
-  font-size: 14px;
-  background: darkcyan;
-  color: white;
   cursor: pointer;
 }
 
-li button:hover {
+button:hover {
   background: lightseagreen;
   font-weight: bold;
+  color: white;
 }
 
-#pre {
-  font-family: 'Times New Roman', Times, serif;
-  font-size: 15px;
-  color: azure;
-}
-
-#task2Do {
-  margin-right: 10px;
-  height: 50px;
-  width: 400px;
-  padding: 10px;
-  border: 1px solid teal;
-  border-radius: 4px;
-  font-size: 18px;
-  text-align: centetr;
-}
-
+#task2Do,
 #btn2Do {
-  margin-left: 5px;
-  margin-bottom: 8px;
-  padding: 10px 14px;
-  background:
-    gray;
-  border: none;
-  border-radius: 4px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
-    0 6px 20px 0 rgba(0, 0, 0, 0.10);
-  cursor: pointer;
-  color: #fff;
-}
-
-#btn2Do:hover {
-  background: darkslategray;
-  border: 1px solid;
-  font-weight: bold;
+  margin: 10px auto;
+  display: block;
 }
