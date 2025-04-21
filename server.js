@@ -21,13 +21,13 @@
  
  * In package.json file, 
  * replace this key/value pair:
-    * "scripts":  
-       -"test": "echo\"Error: no test specified\" && exit 1"
+   * "scripts":  
+       * "test": "echo\"Error: no test specified\" && exit 1"
   
   * with this key/value pair ******
     * "scripts": {
-        - "start": "node server.js",
-        - "devStart": "nodemon server.js"
+        * "start": "node server.js",
+        * "devStart": "nodemon server.js"
    * },
 
 /****** STARTING UP THE SERVER ENGINE *******   
@@ -38,6 +38,7 @@
 /*******************************************************/
 
 /****** REQUIRED STRUCTURE *******
+ *
  * 1. Create Root Folder
  * 2. Create server.js file  (check package.json to make sure thst the value of main: is server.js)
  * 3. Create 'views' folder to store html templates: Pug or EJS
@@ -87,13 +88,13 @@ const PORT = 3000;
 /*** Set-Up: Middleware ***/
 app.use(express.json()); /* putting json capabilities into play */
 app.use(express.static('public')); /* static files from page folder */
-app.set('views', 'views'); /*set view engine path */
+app.set('views', 'views'); /* set view engine path */
 app.set('view engine', 'ejs'); /* ejs template engine */
 app.use(express.urlencoded({ extended: true })); /* access encoded form input data */
 const methodOverride = require('method-override');
 app.use(methodOverride('_method')); /* allows forms to respond to PUT & DELETE requests */
 const cors = require("cors");
-app.use(cors()); /* cross-origin resource sharing: web app in one domain can  access resources from a different domain */
+app.use(cors()); /* cross-origin resource sharing so web app in one domain can access resources from a different domain */
 
 
 /*** Set-Up: Route to Render Landing Page ***/
@@ -130,7 +131,7 @@ app.get('/tasks', (req, res) => {
  * Request: ****/
 app.get('/tasks/:id', (req, res) => {
   const task = tasks.find(t => t.id === parseInt(req.params.id));
-  // if (!task) return res.status(404).send('Task not found');
+  // if (!task) return res.send('Task not found');
   res.json(task);
 });
 
@@ -155,7 +156,7 @@ app.post('/tasks', (req, res) => {
  * Request: ****/
 app.put('/tasks/:id', (req, res) => {
   const task = tasks.find(t => t.id === parseInt(req.params.id));
-  if (!task) return res.status(404).send('Task not found');
+  if (!task) return res.send('Task not found');
 
   task.task = req.body.task;
   res.json(task);
