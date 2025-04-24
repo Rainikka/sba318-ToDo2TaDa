@@ -1,7 +1,6 @@
 {
   "name": "sba318",
   "version": "1.0.0",
-  "description": "NOT VALID ...still learning how to do README.md",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
